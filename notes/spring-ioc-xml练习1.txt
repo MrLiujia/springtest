@@ -25,5 +25,5 @@ beans.xml
 Main
   main方法
     - 创建组件容器
-    - 从组件容器获取 UserService
+    - 从组件容器获取 UserController
     - 调用其 register("zhangsan", "123456")
