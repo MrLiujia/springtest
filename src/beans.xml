@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	
+<!-- 	组件声明的顺序随便写，不用按照依赖关系来 - spring会智能分析 -->
+	<bean id="a" class="springtest.di.ioc.xml.A">
+<!-- 		构造器注入b -->
+		<constructor-arg ref="b"></constructor-arg> 
+	</bean>
+	
+	<bean id="b" class="springtest.di.ioc.xml.B">
+<!-- 		setter注入c -->
+		<property name="c" ref="c"></property>
+	</bean>
+	
+	<bean id="c" class="springtest.di.ioc.xml.C"></bean>
+	
+</beans>

@@ -19,7 +19,7 @@ public class B {
 
 	public void b() {
 		
-		System.out.println("b");
+		System.out.println("ioc xml b");
 		c.c();
 	}
 }

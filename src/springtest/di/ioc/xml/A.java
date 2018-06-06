@@ -11,7 +11,7 @@ public class A {
 	}
 
 	public void a() {
-		System.out.println("a");
+		System.out.println("ioc xml a");
 		b.b();
 	}
 
