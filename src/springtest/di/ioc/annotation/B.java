@@ -1,5 +1,10 @@
-package springtest;
+package springtest.di.ioc.annotation;
 
+/**
+ * 使用前需要setC
+ * @author Administrator
+ *
+ */
 public class B {
 	private C c;
 	

@@ -1,4 +1,4 @@
-package springtest;
+package springtest.di.ioc.xml;
 
 public class A {
 	

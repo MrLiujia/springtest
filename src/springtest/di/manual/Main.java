@@ -1,4 +1,4 @@
-package springtest;
+package springtest.di.manual;
 
 public class Main {
 
