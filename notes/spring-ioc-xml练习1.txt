@@ -1,0 +1,29 @@
+按要求编写以下类和配置文件
+
+UserController 
+  +register(String username, String password)
+    打印“注册xxx...”
+    调用 UserService.register
+          
+UserService
+  +register(String username, String password)
+    打印“检查用户名xxx是否存在...”，调用 UserDao.usernameExists
+    若用户名已存在，打印“注册失败，用户名xxx已存在”
+    否则：
+      打印“加密明文密码...”
+      调用 UserDao.insert
+
+UserDao
+  +usernameExists(String username)
+    返回false
+  +insert(String username, String encodedPassword)
+    打印“插入用户xxx”
+     
+beans.xml
+  使用spring ioc xml配置组件及其依赖关系(UserController -> UserService -> UserDao)
+  
+Main
+  main方法
+    - 创建组件容器
+    - 从组件容器获取 UserService
+    - 调用其 register("zhangsan", "123456")
