@@ -1,0 +1,22 @@
+﻿SSM（重点）
+Spring + Spring MVC + Mybatis
+
+SSH(用得越来越少)
+Sprint + Struts     + Hibernate
+
+Spring
+官网 			https://spring.io/projects/spring-framework
+github			https://github.com/spring-projects/spring-framework
+
+1. IOC
+Inversion of Control				控制反转
+Dependency Injection				依赖注入（简称DI）
+Single Responsibility Principle		单一职责原则(SRP) 利于复用、维护、扩展
+
+依赖的两种注入方式：构造器注入、setter注入
+
+参考：
+OOP设计思想 		https://blog.csdn.net/Shenpibaipao/article/details/77162732
+
+
+2. AOP
