@@ -8,7 +8,7 @@ public class Main {
 		ClassPathXmlApplicationContext context = 
 				new ClassPathXmlApplicationContext("springtest/exercise1/beans.xml");
 		UserController userController = context.getBean(UserController.class);
-		userController.register("zhangsan", "123456");
+		userController.register("zhangsan", "123abc");
 	}
 
 }
