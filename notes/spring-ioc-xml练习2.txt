@@ -1,38 +1,38 @@
-°´ÒªÇó±àĞ´ÒÔÏÂÀàºÍÅäÖÃÎÄ¼ş
-Àà Student
+æŒ‰è¦æ±‚ç¼–å†™ä»¥ä¸‹ç±»å’Œé…ç½®æ–‡ä»¶
+ç±» Student
   -number: Int
   -name: String
   -gender: enum(Male, Female)
   -age: Int
   -major: String
   +getters
-  +¹¹ÔìÆ÷£¨³õÊ¼»¯ËùÓĞ×Ö¶Î£©
+  +æ„é€ å™¨ï¼ˆåˆå§‹åŒ–æ‰€æœ‰å­—æ®µï¼‰
   
-Àà StudentController 
+ç±» StudentController 
   +void list()
-    µ÷ÓÃ StudentService.findAll()
-    Ê¹ÓÃÑ­»·´òÓ¡¡°Ñ§ºÅ ĞÕÃû ĞÔ±ğ ÄêÁä ×¨Òµ¡±
+    è°ƒç”¨ StudentService.findAll()
+    ä½¿ç”¨å¾ªç¯æ‰“å°â€œå­¦å· å§“å æ€§åˆ« å¹´é¾„ ä¸“ä¸šâ€
           
-½Ó¿Ú StudentService
+æ¥å£ StudentService
   +List<Student> findAll()
-ÊµÏÖÀà StudentServiceImpl    
+å®ç°ç±» StudentServiceImpl    
   +List<Student> findAll()
-    µ÷ÓÃ StudentDao.queryAll
+    è°ƒç”¨ StudentDao.queryAll
 
-½Ó¿Ú StudentDao
+æ¥å£ StudentDao
   +List<Student> queryAll()
-ÊµÏÖÀà StudentDaoImpl
+å®ç°ç±» StudentDaoImpl
   +List<Student> queryAll()
-    ·µ»ØList
-      1, "ÕÅÈı", ...
-      2, "ÀîËÄ", ...
-      3, "ÍõÎå", ...
+    è¿”å›List
+      1, "å¼ ä¸‰", ...
+      2, "æå››", ...
+      3, "ç‹äº”", ...
      
 beans.xml
-  Ê¹ÓÃspring ioc xmlÅäÖÃ×é¼ş¼°ÆäÒÀÀµ¹ØÏµ(StudentController -> StudentService -> StudentDao)
+  ä½¿ç”¨spring ioc xmlé…ç½®ç»„ä»¶åŠå…¶ä¾èµ–å…³ç³»(StudentController -> StudentService -> StudentDao)
   
 Main
-  main·½·¨
-    - ´´½¨×é¼şÈİÆ÷
-    - ´Ó×é¼şÈİÆ÷»ñÈ¡ StudentController
-    - µ÷ÓÃÆä list()
+  mainæ–¹æ³•
+    - åˆ›å»ºç»„ä»¶å®¹å™¨
+    - ä»ç»„ä»¶å®¹å™¨è·å– StudentController
+    - è°ƒç”¨å…¶ list()
