@@ -1,0 +1,38 @@
+按要求编写以下类和配置文件
+类 Student
+  -number: Int
+  -name: String
+  -gender: enum(Male, Female)
+  -age: Int
+  -major: String
+  +getters
+  +构造器（初始化所有字段）
+  
+类 StudentController 
+  +void list()
+    调用 StudentService.findAll()
+    使用循环打印“学号 姓名 性别 年龄 专业”
+          
+接口 StudentService
+  +List<Student> findAll()
+实现类 StudentServiceImpl    
+  +List<Student> findAll()
+    调用 StudentDao.queryAll
+
+接口 StudentDao
+  +List<Student> queryAll()
+实现类 StudentDaoImpl
+  +List<Student> queryAll()
+    返回List
+      1, "张三", ...
+      2, "李四", ...
+      3, "王五", ...
+     
+beans.xml
+  使用spring ioc xml配置组件及其依赖关系(StudentController -> StudentService -> StudentDao)
+  
+Main
+  main方法
+    - 创建组件容器
+    - 从组件容器获取 StudentController
+    - 调用其 list()
