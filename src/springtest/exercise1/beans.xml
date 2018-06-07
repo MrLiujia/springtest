@@ -13,6 +13,7 @@
 <!-- 		<constructor-arg ref="更多依赖"></constructor-arg> -->
 	</bean>
 	
+<!-- 	注意: class必须是实现类，spring会根据依赖的接口注入实现的bean -->
 	<bean id="userService" class="springtest.exercise1.UserService">
 		<property name="userDao" ref="userDao"></property>
 		<property name="passwordEncoder" ref="passwordEncoder"></property>
