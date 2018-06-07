@@ -19,4 +19,6 @@
 	
 	<bean id="c" class="springtest.di.ioc.xml.C"></bean>
 	
+	<bean id="d" class="springtest.di.ioc.xml.D" scope="prototype"></bean>
+	
 </beans>
