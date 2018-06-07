@@ -1,9 +1,14 @@
 package springtest.exercise1;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+@Controller // 控制器专用，本质上同@Component
 public class UserController {
 	// OOP封装原则，协作时知道得越少越好，编写类时，暴露得越少越好
 	private IUserService userService; // 依赖类型应该优先使用接口或者父类
 	
+	@Autowired
 	public UserController(UserService userService) {
 		this.userService = userService;
 	}

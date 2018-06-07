@@ -6,20 +6,10 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans	http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 	
-<!-- 	组件声明的顺序随便写，不用按照依赖关系来 - spring会智能分析 -->
-	<bean id="userController" class="springtest.exercise1.UserController">
-		<constructor-arg ref="userService"></constructor-arg> 
-<!-- 		更多依赖按照构造器参数列表依次给出 -->
-<!-- 		<constructor-arg ref="更多依赖"></constructor-arg> -->
-	</bean>
+	<context:component-scan base-package="springtest.exercise1"></context:component-scan>
 	
-<!-- 	注意: class必须是实现类，spring会根据依赖的接口注入实现的bean -->
-	<bean id="userService" class="springtest.exercise1.UserService">
-		<property name="userDao" ref="userDao"></property>
-		<property name="passwordEncoder" ref="passwordEncoder"></property>
-	</bean>
-	
-	<bean id="userDao" class="springtest.exercise1.UserDao"></bean>
+<!-- 	组件扫描和手动写<bean>可以混合使用 -->
+<!-- 	组件扫描适用于我们自己写的类，而第三方的类应该需要手写<bean> -->
 	
 	<bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
 <!-- 		像整数、小数、布尔、字符串这些简单类型使用value，引用别的组件使用ref -->

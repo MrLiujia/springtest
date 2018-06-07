@@ -17,8 +17,13 @@ Single Responsibility Principle		单一职责原则(SRP) 利于复用、维护�
 另一个角度分类：手动注入，spring IOC容器注入（xml、注解、混合xml和注解）
 
 Spring IOC注解：
-@Component 声明组件           用在实现类上面
-@Autowired 声明依赖关系   用在构造器或者setter、字段上面
+
+@Controller  控制器组件
+@Service     服务组件
+@Repository  DAO组件
+@Component   声明组件           用在实现类上面，当组件不是控制器、service、DAO时使用
+@Autowired   声明依赖关系       用在构造器或者setter、字段上面
+
 
 spring IOC 术语：
 组件（component）、beans：特指系统中的关键的、起支撑作用的对象（骨架对象）

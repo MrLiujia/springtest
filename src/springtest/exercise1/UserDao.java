@@ -1,5 +1,8 @@
 package springtest.exercise1;
 
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class UserDao implements IUserDao {
 
 	@Override

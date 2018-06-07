@@ -1,7 +1,10 @@
 package springtest.exercise1;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserService implements IUserService {
 	
 	private IUserDao userDao;
@@ -9,10 +12,12 @@ public class UserService implements IUserService {
 	private BCryptPasswordEncoder passwordEncoder;
 	
 	// spring会注入实现了IUserDao的组件
+	@Autowired
 	public void setUserDao(IUserDao userDao) {
 		this.userDao = userDao;
 	}
 	
+	@Autowired
 	public void setPasswordEncoder(BCryptPasswordEncoder passwordEncoder) {
 		this.passwordEncoder = passwordEncoder;
 	}
