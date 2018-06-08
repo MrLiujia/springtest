@@ -2,6 +2,7 @@ package springtest.di.ioc.annotation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -9,7 +10,8 @@ public class UserService implements IUserService {
 	
 	private IUserDao userDao;
 	
-	private BCryptPasswordEncoder passwordEncoder;
+	// 声明依赖时接口优先，应该对应@Bean方法的返回类型
+	private PasswordEncoder passwordEncoder;
 	
 	// spring会注入实现了IUserDao的组件
 	@Autowired
@@ -18,7 +20,7 @@ public class UserService implements IUserService {
 	}
 	
 	@Autowired
-	public void setPasswordEncoder(BCryptPasswordEncoder passwordEncoder) {
+	public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
 		this.passwordEncoder = passwordEncoder;
 	}
 

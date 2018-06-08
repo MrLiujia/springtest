@@ -1,12 +1,13 @@
 package springtest.di.ioc.annotation;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
 
 	public static void main(String[] args) {
-		ClassPathXmlApplicationContext context = 
-				new ClassPathXmlApplicationContext("springtest/di/ioc/annotation/beans.xml");
+		AnnotationConfigApplicationContext context = 
+				new AnnotationConfigApplicationContext(AppConfig.class);
+		
 		UserController userController = context.getBean(UserController.class);
 		userController.register("zhangsan", "123abc");
 	}
