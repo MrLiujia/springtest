@@ -6,16 +6,16 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans	http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 	
-<!-- 	组件声明的顺序随便写，不用按照依赖关系来 - spring会智能分析 -->
-	<bean id="studentController" class="springtest.exercise2.StudentController">
-		<constructor-arg ref="studentService"></constructor-arg> 
-	</bean>
+	<context:component-scan base-package="springtest.exercise2"></context:component-scan>
 	
-<!-- 	注意: class必须是实现类，spring会根据依赖的接口注入实现的bean -->
-	<bean id="studentService" class="springtest.exercise2.StudentServiceImpl">
-		<constructor-arg ref="studentDao"></constructor-arg> 
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+<!-- 		构造器注入和setter注入混合使用 -->
+<!-- 		DataSource ds = new DriverManagerDataSource(url, username, password) -->
+		<constructor-arg value="jdbc:h2:tcp://localhost/D:/zhujunqi/h2db/h2db-8"></constructor-arg>
+		<constructor-arg value="sa"></constructor-arg>
+		<constructor-arg value="123456"></constructor-arg>
+<!-- 		ds.setDriverClassName(...) -->
+		<property name="driverClassName" value="org.h2.Driver"></property>
 	</bean>
-	
-	<bean id="studentDao" class="springtest.exercise2.StudentDaoImpl"></bean>
 	
 </beans>

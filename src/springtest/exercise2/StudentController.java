@@ -2,9 +2,14 @@ package springtest.exercise2;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+@Controller
 public class StudentController {
 	private StudentService studentService;
 	
+	@Autowired
 	public StudentController(StudentService studentService) {
 		this.studentService = studentService;
 	}

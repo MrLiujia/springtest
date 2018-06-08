@@ -1,0 +1,21 @@
+在spring-ioc-xml练习2的基础上，
+1、建表并插入测试数据（张三、李四、王五）
+STUDENT
+  -S_NUMBER: integer
+  -S_NAME: varchar(64)
+  -S_GENDER: varchar(64)
+  -S_AGE: integer
+  -S_MAJOR: varchar(64)
+
+2、使用JDBC查询学生表实现 StudentDaoImpl.queryAll方法
+实现类 StudentDaoImpl
+  +List<Student> queryAll()
+ 
+ create table STUDENT(
+  S_NUMBER identity, 
+  S_NAME varchar(64), 
+  S_GENDER varchar(32), 
+  S_AGE integer, 
+  S_MAJOR varchar(64)
+)
+
