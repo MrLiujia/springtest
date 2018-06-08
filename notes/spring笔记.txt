@@ -23,7 +23,7 @@ Spring IOC注解：
 @Repository  DAO组件
 @Component   声明组件           用在实现类上面，当组件不是控制器、service、DAO时使用
 @Autowired   声明依赖关系       用在构造器或者setter、字段上面
-
+@Primary     作为首选组件       用在有多个组件实现了同一接口时
 
 spring IOC 术语：
 组件（component）、beans：特指系统中的关键的、起支撑作用的对象（骨架对象）
