@@ -1,0 +1,27 @@
+按要求编写以下代码
+
+配置文件 server.properties
+server.host=127.0.0.1
+server.port=9090
+
+组件类 Server
+构造器注入(Environment env)，并初始化以下字段
+字段
+  -String host
+  -Integer port
+方法
+  +void start()  
+    打印“正在启动服务器（主机：host，端口：port）”
+
+配置类 AppConfig
+  1、组件扫描
+  2、注册配置文件 server.properties
+
+类 Main
+  1、创建基于注解的组件容器
+  2、获取组件 Server
+  3、调用其方法 start()
+  
+
+  
+  
