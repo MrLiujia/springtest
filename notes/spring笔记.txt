@@ -39,5 +39,6 @@ scope(域)：singleton(单例)、prototype(原型)
 参考：
 OOP设计思想       https://blog.csdn.net/Shenpibaipao/article/details/77162732
 设计模式          经典书籍《设计模式：可复用面向对象软件的基础》
+Spring JDBC       参考博客 https://www.cnblogs.com/tuhooo/p/6491913.html
 
 2. AOP

@@ -1,0 +1,12 @@
+在练习2的基础上，按要求编写以下代码
+
+1、在类Student中添加id属性
+2、在表STUDENT中添加ID列
+
+3、使用Spring JdbcTemplate实现StudentDao的增删改查（CRUD）
+StudentDao
+  +Student findOne(Integer id)       根据id查
+  +void add(Student student)         添加
+  +void delete(Integer id)           删除
+  +void update(Student student)      修改
+  
