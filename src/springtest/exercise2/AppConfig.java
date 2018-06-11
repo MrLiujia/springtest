@@ -7,6 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 @Configuration
@@ -22,5 +23,10 @@ public class AppConfig {
 				env.getProperty("jdbc.password"));
 		ds.setDriverClassName(env.getProperty("jdbc.driverClassName"));
 		return ds;
+	}
+	
+	@Bean
+	public JdbcTemplate jdbcTemplate(DataSource ds) { // JDBC模板依赖数据源
+		return new JdbcTemplate(ds);
 	}
 }
