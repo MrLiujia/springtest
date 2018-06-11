@@ -5,20 +5,22 @@ import javax.sql.DataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 @Configuration
 @ComponentScan(basePackages = "springtest.exercise2")
+@PropertySource({"classpath:jdbc.properties", "classpath:springtest/exercise2/app.properties"}) // 注册属性文件到配置环境 Environment
 public class AppConfig {
 
-	@Bean
-	public DataSource dataSource() {
-		// TODO 连接参数从属性文件中获取
+	@Bean // 通过参数列表声明依赖，类似于构造器注入，实际上，@Bean方法的角色也是工厂方法
+	public DataSource dataSource(Environment env) { // 数据源依赖配置环境
 		DriverManagerDataSource ds = new DriverManagerDataSource(
-				"jdbc:h2:tcp://localhost/D:/zhujunqi/h2db/h2db-8",
-				"sa",
-				"123456");
-		ds.setDriverClassName("org.h2.Driver");
+				env.getProperty("jdbc.url"),
+				env.getProperty("jdbc.username"),
+				env.getProperty("jdbc.password"));
+		ds.setDriverClassName(env.getProperty("jdbc.driverClassName"));
 		return ds;
 	}
 }
