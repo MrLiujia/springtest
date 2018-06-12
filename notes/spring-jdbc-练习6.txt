@@ -1,0 +1,43 @@
+业务场景：系统管理员CRUD
+按要求编写以下代码
+
+表OPERATORS
+  -ID: integer
+  -USERNAME: varchar(64)           用户名
+  -PASSWORD: varchar(64)           密码（BCrypt编码）
+  -ROLE: varchar(64)               管理员角色，如HR、TEACHER、ACCOUNTANT、SALESMAN
+  -DISABLED: boolean               账号是否被禁用，默认启用（false）
+  
+类Operator
+  -id: Integer
+  -username: String
+  -password: String
+  -role: String
+  -disabled: Boolean
+  +getters
+  +构造器（初始化所有字段）
+  
+接口OperatorDao
+  +List<Operator> findAll()                                      查找所有管理员（不需要密码）
+  +Operator findOne(Integer id)                                  根据id查找某个管理员（需要密码）
+  +void create(String username, String password, String role)    添加管理员（password是明文）
+  +void updatePassword(Integer id, String newPassword)           修改密码（newPassword是明文）
+  +void delete(Integer id)                                       删除管理员
+  +void disable(Integer id)                                      禁用指定管理员账号（将DISABLED列设为true）
+  +void enable(Integer id)                                       启用指定管理员账号（将DISABLED列设为false）
+  
+实现类OperatorDaoImpl
+  -jdbcTemplate
+  -passwordEncoder
+
+配置类AppConfig
+  1、组件扫描
+  2、注册jdbc.properties
+  3、定义@Bean 数据源
+  4、定义@Bean Jdbc模板
+  5、定义@Bean Bcrypt密码编码器
+
+主类Main
+  1、创建基于注解配置的组件容器
+  2、获取组件OperatorDao
+  3、测试CRUD
