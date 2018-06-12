@@ -41,3 +41,14 @@
   1、创建基于注解配置的组件容器
   2、获取组件OperatorDao
   3、测试CRUD
+  
+-------------------------------------------------
+
+建表语句（H2适用）  
+create table OPERATORS(
+  ID identity,
+  USERNAME varchar(64),
+  PASSWORD varchar(64),
+  ROLE varchar(64),
+  DISABLED boolean
+)
