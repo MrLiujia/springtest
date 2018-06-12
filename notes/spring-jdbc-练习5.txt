@@ -5,8 +5,8 @@
 
 3、使用Spring JdbcTemplate实现StudentDao的增删改查（CRUD）
 StudentDao
-  +Student findOne(Integer id)       根据id查
-  +void add(Student student)         添加
-  +void delete(Integer id)           删除
-  +void update(Student student)      修改
+  +Student findOne(Integer id)       根据id查      Read
+  +void add(Student student)         添加          Create
+  +void delete(Integer id)           删除          Delete
+  +void update(Student student)      修改          Update
   

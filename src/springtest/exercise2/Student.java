@@ -1,14 +1,14 @@
 package springtest.exercise2;
 
 public class Student {
-	private Integer number;
+	private Long id; // 当表中的数据行可能无限增长时，id列最好用Long
 	private String name;
 	private Gender gender; // 性别
 	private Integer age;
 	private String major; // 专业
 	
-	public Integer getNumber() {
-		return number;
+	public Long getId() {
+		return id;
 	}
 	public String getName() {
 		return name;
@@ -23,13 +23,18 @@ public class Student {
 		return major;
 	}
 	
-	public Student(Integer number, String name, Gender gender, Integer age,
+	public Student(Long id, String name, Gender gender, Integer age,
 			String major) {
-		this.number = number;
+		this.id = id;
 		this.name = name;
 		this.gender = gender;
 		this.age = age;
 		this.major = major;
 	}
 	
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", gender=" + gender
+				+ ", age=" + age + ", major=" + major + "]";
+	}
 }

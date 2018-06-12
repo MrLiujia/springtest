@@ -18,7 +18,7 @@ public class StudentController {
 		List<Student> list = studentService.findAll();
 		for (Student student : list) {
 			System.out.println(String.format("%s %s %s %s %s", 
-					student.getNumber(), student.getName(), 
+					student.getId(), student.getName(), 
 					student.getGender(), student.getAge(),
 					student.getMajor()));
 		}

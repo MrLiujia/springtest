@@ -11,11 +11,16 @@ STUDENT
 实现类 StudentDaoImpl
   +List<Student> queryAll()
  
- create table STUDENT(
-  S_NUMBER identity, 
+----------------------------------------------------
+ 
+建表语句（适用于H2）
+create table STUDENT(
+  S_ID identity, 
   S_NAME varchar(64), 
   S_GENDER varchar(32), 
   S_AGE integer, 
   S_MAJOR varchar(64)
 )
 
+插入测试数据
+insert into STUDENT(S_NAME, S_GENDER, S_AGE, S_MAJOR) values('张三', 'Male', 21, 'UI');
