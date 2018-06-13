@@ -12,14 +12,23 @@
 
 切面TransactionAspect
   1、针对所有service的所有public方法
-  2、方法执行前打印“开始事务”
-  3、方法成功返回时打印“提交事务”
-  4、方法抛出异常时打印“回滚事务”、再抛出此异常
+  2、方法执行前打印“[类名.方法名]开始事务”
+  3、方法成功返回时打印“[类名.方法名]提交事务”
+  4、方法抛出异常时打印“[类名.方法名]回滚事务(异常消息)”、再抛出此异常
   
 配置类AppConfig
-  
+  1、组件扫描
+  2、开启@Aspect自动代理
   
 Main类
   1、创建组件容器
   2、获取组件UserService
   3、调用其方法register("zhangsan", "123abc")和login("zhangsan", "123456")
+  
+  结果应该是：
+  
+[UserServiceImpl.register]开始事务
+注册成功
+[UserServiceImpl.register]提交事务    
+[UserServiceImpl.login]开始事务
+[UserServiceImpl.login]回滚事务(用户名或密码错误)
