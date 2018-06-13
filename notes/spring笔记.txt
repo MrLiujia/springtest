@@ -42,3 +42,11 @@ OOP设计思想       https://blog.csdn.net/Shenpibaipao/article/details/7716273
 Spring JDBC       参考博客 https://www.cnblogs.com/tuhooo/p/6491913.html
 
 2. AOP
+Aspect oriented programming（面向切面编程）
+它和OOP（面向对象编程）不是对抗的关系，而是补充
+
+注解：
+@Aspect                            声明切面
+@EnableAspectJAutoProxy            启用@Aspect组件的处理
+@Around                            拦截方法，可以决定要不要放行
+

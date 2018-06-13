@@ -1,0 +1,25 @@
+按要求编写以下代码
+
+接口UserService
+  +void register(String username, String password)
+  +void login(String username, String password)
+  
+实现类UserServiceImpl
+  +void register(String username, String password)
+    打印“注册成功”
+  +void login(String username, String password)    
+    抛出运行时异常“用户名或密码错误”
+
+切面TransactionAspect
+  1、针对所有service的所有public方法
+  2、方法执行前打印“开始事务”
+  3、方法成功返回时打印“提交事务”
+  4、方法抛出异常时打印“回滚事务”、再抛出此异常
+  
+配置类AppConfig
+  
+  
+Main类
+  1、创建组件容器
+  2、获取组件UserService
+  3、调用其方法register("zhangsan", "123abc")和login("zhangsan", "123456")
